@@ -9,14 +9,16 @@ import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
 const Login = () => {
-  const { signInUsingGoogle } = useAuth();
+  const { signInUsingGoogle, userLogin } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { Email, Password } = data;
+    userLogin(Email, Password);
+  };
   return (
     <Container sx={{ pt: 12, pb: 10, textAlign: "center" }}>
       <Box sx={{ bgcolor: "#fcf4e0", py: 6, boxShadow: 4, borderRadius: 2 }}>
@@ -41,7 +43,7 @@ const Login = () => {
               {...register("Password", {
                 required: true,
                 pattern:
-                  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/i,
+                  /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8})/i,
               })}
             />
             {errors.Password && (

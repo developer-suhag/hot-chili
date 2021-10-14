@@ -4,6 +4,9 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -32,6 +35,25 @@ const useFirebase = () => {
     });
   };
 
+  // sign in with email and password
+
+  const handleEmailLogin = (name, email, password) => {
+    console.log(name, email, password);
+    createUserWithEmailAndPassword(auth, email, password).then((result) => {
+      setUser(result.user);
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      }).then(() => {});
+    });
+  };
+
+  const userLogin = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password).then((result) => {
+      setUser(result.user);
+      console.log(result.user);
+    });
+  };
+
   //   observe user
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -46,6 +68,8 @@ const useFirebase = () => {
 
   return {
     signInUsingGoogle,
+    handleEmailLogin,
+    userLogin,
     logOut,
     user,
   };

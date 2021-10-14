@@ -9,14 +9,16 @@ import logo from "../../../images/logo.png";
 import "./SignUp.css";
 
 const SignUp = () => {
-  const { signInUsingGoogle } = useAuth();
+  const { signInUsingGoogle, handleEmailLogin } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { Name, Email, Password } = data;
+    handleEmailLogin(Name, Email, Password);
+  };
   return (
     <Container sx={{ pt: 12, pb: 10, textAlign: "center" }}>
       <Box sx={{ bgcolor: "#fcf4e0", py: 6, boxShadow: 4, borderRadius: 2 }}>
@@ -50,7 +52,7 @@ const SignUp = () => {
               {...register("Password", {
                 required: true,
                 pattern:
-                  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/i,
+                  /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8})/i,
               })}
             />
             {errors.Password && (
@@ -66,7 +68,7 @@ const SignUp = () => {
               {...register("ConfrimPassword", {
                 required: true,
                 pattern:
-                  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/i,
+                  /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8})/i,
               })}
             />
             {errors.ConfrimPassword && (

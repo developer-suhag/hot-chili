@@ -1,12 +1,11 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Button, Container, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import "./Header.css";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-import logo from "../../images/logo.png";
 import useAuth from "../../hooks/useAuth";
+import logo from "../../images/logo.png";
+import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -85,11 +84,10 @@ const Header = () => {
               )}
 
               <span>
-                {user?.photoURL ? (
+                {user?.photoURL && (
                   <img className="user-img" src={user.photoURL} alt="" />
-                ) : (
-                  user?.dispalyName
                 )}
+                {!user.photoURL && <small>{user.displayName}</small>}
               </span>
             </Grid>
           </Grid>
