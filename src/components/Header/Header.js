@@ -1,13 +1,19 @@
 import { Button, Container, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Header.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import logo from "../../images/logo.png";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+  const history = useHistory();
+  const handleLogin = () => {
+    history.push("/login");
+  };
   return (
     <>
       <Box
@@ -32,19 +38,55 @@ const Header = () => {
                 <img className="logo" src={logo} alt="" />
               </Link>
             </Grid>
-            <Grid sx={{ textAlign: "right" }} item xs={2} md={6}>
+            <Grid
+              sx={{
+                textAlign: "right",
+                display: "flex",
+                justifyContent: "end",
+                alignItems: "center",
+              }}
+              item
+              xs={2}
+              md={6}
+            >
               <Button sx={{ color: "#222" }} variant="text">
                 <ShoppingCartIcon />
               </Button>
-              <Button sx={{ color: "#222", mx: 2 }} variant="text">
-                Login
-              </Button>
-              <Button
-                sx={{ bgcolor: "#F74528", borderRadius: 4 }}
-                variant="contained"
-              >
-                Sign Up
-              </Button>
+
+              {!user?.email && (
+                <Button
+                  onClick={handleLogin}
+                  sx={{ color: "#222", mx: 2 }}
+                  variant="text"
+                >
+                  Login
+                </Button>
+              )}
+              {!user?.email && (
+                <Button
+                  sx={{ bgcolor: "#F74528", mx: 2, borderRadius: 4 }}
+                  variant="contained"
+                >
+                  Sign Up
+                </Button>
+              )}
+              {user?.email && (
+                <Button
+                  sx={{ bgcolor: "#F74528", mx: 2, borderRadius: 4 }}
+                  variant="contained"
+                  onClick={logOut}
+                >
+                  Log Out
+                </Button>
+              )}
+
+              <span>
+                {user?.photoURL ? (
+                  <img className="user-img" src={user.photoURL} alt="" />
+                ) : (
+                  user?.dispalyName
+                )}
+              </span>
             </Grid>
           </Grid>
         </Container>
