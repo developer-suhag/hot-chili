@@ -1,0 +1,44 @@
+[
+  {
+    "id": "jxm5UNB",
+    "foodName": "Egg sandwich",
+    "img": "https://i.ibb.co/zQ1c1yY/toast-with-avocado-spinach-and-fried-egg-top-view.jpg",
+    "price": 9.99,
+    "description": "An egg sandwich is a sandwich with some kind of cooked egg filling. Fried eggs, scrambled eggs, sliced boiled eggs and egg salad (a mix of chopped cooked egg and mustard and mayonnaise) are popular options. In the fourth case, it may be called an egg salad sandwich."
+  },
+  {
+    "id": "FnU3e0K",
+    "foodName": "Pan Cakes",
+    "img": "https://i.ibb.co/r4yZw9R/A-stack-of-pancakes-on-a-plate-with-syrup-and-butter-Isolated-on-white-with-clipping-path.jpg",
+    "price": 6.99,
+    "description": "A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter."
+  },
+  {
+    "id": "0M03yhi",
+    "foodName": "Chicken and waffles",
+    "img": "https://i.ibb.co/F348xkq/Fried-Chicken-and-Waffles-with-Syrup-is-Classic-Southern-Comfort-food-Photographed-on-Hasselblad-H3.jpg",
+    "price": 12.99,
+    "description": "Chicken and waffles is an American dish combining chicken with waffles. It is part of a variety of culinary traditions, including Pennsylvania Dutch cuisine and soul food, and is served in certain specialty restaurants in the United States. "
+  },
+  {
+    "id": "8YMQwoL",
+    "foodName": "Home fries",
+    "img": "https://i.ibb.co/DM0JZYY/chips-against-white.jpg",
+    "price": 7.99,
+    "description": "Home fries is a popular American side dish made by frying larger chunks of potatoes in butter or oil until they are crispy and golden in color. The potatoes might sometimes be unpeeled, and they are often shortly boiled or steamed before frying. Home fries are often paired with onions and peppers in the same pan."
+  },
+  {
+    "id": "KG5Khcd",
+    "foodName": "Breakfast burrito",
+    "img": "https://i.ibb.co/0r18jrX/Breakfast-Burrito-with-Hash-Brown-Potatoes-and-Salsa-Photographed-on-Hasselblad-H3-D2-39mb-Camera.jpg",
+    "price": 4.99,
+    "description": "The breakfast burrito, sometimes referred to as a breakfast wrap outside of the American Southwest, is a variety of American breakfast composed of breakfast items wrapped inside a flour tortilla burrito."
+  },
+  {
+    "id": "RpUsWX0",
+    "foodName": "Breakfast Sandwich",
+    "img": "https://i.ibb.co/GkZB7ms/Bacon-Egg-and-Cheese-Breakfast-Sandwich-on-a-Toasted-English-Muffin-with-a-Natural-Drop-Shadow-Photo.jpg",
+    "price": 12.99,
+    "description": "A breakfast sandwich is any sandwich filled with foods associated with the breakfast meal. Breakfast sandwiches are served at fast food restaurants and delicatessens or bought as fast, ready to heat and eat sandwiches from a store. Breakfast sandwiches are commonly made at home."
+  }
+]

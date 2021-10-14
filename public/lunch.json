@@ -1,0 +1,44 @@
+[
+  {
+    "id": "GkKj26x",
+    "foodName": "Burger",
+    "img": "https://i.ibb.co/RhbzrpL/hamburger-with-lettuce-in-a-plate-on-a-white-background-top-view.jpg",
+    "price": 19.99,
+    "description": "A hamburger is a food, typically considered a sandwich, consisting of one or more cooked patties—usually ground meat, typically beef—placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled."
+  },
+  {
+    "id": "4icE2hE",
+    "foodName": "Barbecue ribs",
+    "img": "https://i.ibb.co/v4TcBSn/Plate-of-cut-baby-back-ribs-with-barbecue-sauce-lettuce-and-cherry-tomatoes-isolated-on-white-More-r.jpg",
+    "price": 15.99,
+    "description": "Juicy melt-in-your-mouth oven baked Barbecue Ribs are fall-off-the-bone delicious! Double up on incredible flavour with an easy to make dry rub first, then coat them in a seasoned barbecue sauce mixture so addictive you won’t stop at one! Finger licking good ribs right here!"
+  },
+  {
+    "id": "HNscuNR",
+    "foodName": "The BLT",
+    "img": "https://i.ibb.co/ZxtXz06/Toasted-BLT-Sandwich-with-Coleslaw-Bacon-Lettuce-and-Tomato-on-Whole-Wheat-Bread-Photographed-on-Has.jpg",
+    "price": 12.99,
+    "description": "A BLT is a type of sandwich, named for the initials of its primary ingredients, bacon, lettuce, and tomato. It can be made with varying recipes according to personal preference. Simple variants include using different types of lettuce, toasting or not, or adding mayonnaise."
+  },
+  {
+    "id": "Wo607Rl",
+    "foodName": "Buffalo chicken wings",
+    "img": "https://i.ibb.co/4WSn04h/Hot-Wings-isolated-on-white-Please-see-my-portfolio-for-other-food-related-images.jpg",
+    "price": 12.99,
+    "description": "A Buffalo wing in American cuisine is an unbreaded chicken wing section that is generally deep-fried and then coated or dipped in a sauce consisting of a vinegar-based cayenne pepper hot sauce and melted butter prior to serving."
+  },
+  {
+    "id": "UhKJuep",
+    "foodName": "Reuben sandwich",
+    "img": "https://i.ibb.co/x2nH0fM/5.jpg",
+    "price": 17.99,
+    "description": "The Reuben sandwich is a North American grilled sandwich composed of corned beef, Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread. It is associated with kosher-style delicatessens, but it is not kosher, because it combines meat and cheese."
+  },
+  {
+    "id": "cCJy2Bk",
+    "foodName": "Classic hot dog",
+    "img": "https://i.ibb.co/VVYZnZs/hot-dog-with-tomato-in-a-plate-on-a-white-background-top-view.jpg",
+    "price": 12.99,
+    "description": "Pork and beef are the traditional meats used in hot dogs. Less expensive hot dogs are often made from chicken or turkey, using low-cost mechanically separated poultry."
+  }
+]
