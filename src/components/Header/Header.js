@@ -29,7 +29,7 @@ const Header = () => {
           >
             <Grid item xs={2} md={6}>
               <Link to="/">
-                <img className="logo" src={logo} alt="" srcset="" />
+                <img className="logo" src={logo} alt="" />
               </Link>
             </Grid>
             <Grid sx={{ textAlign: "right" }} item xs={2} md={6}>

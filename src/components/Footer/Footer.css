@@ -1,0 +1,12 @@
+.footer-section {
+  background: #2d3436;
+}
+.footer-logo {
+  width: 200px;
+}
+.footer-link {
+  color: #fff !important;
+  display: block;
+  padding: 5px 0;
+  cursor: pointer;
+}
