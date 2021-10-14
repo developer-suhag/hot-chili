@@ -1,14 +1,14 @@
-import { Button, Container, Typography } from "@mui/material";
-import React from "react";
 import GoogleIcon from "@mui/icons-material/Google";
-import "./Login.css";
-import useAuth from "../../../hooks/useAuth";
-import { useForm } from "react-hook-form";
+import { Button, Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import logo from "../../../images/logo.png";
+import "./SignUp.css";
 
-const Login = () => {
+const SignUp = () => {
   const { signInUsingGoogle } = useAuth();
   const {
     register,
@@ -25,6 +25,15 @@ const Login = () => {
         </Box>
         <Box className="signup-form" sx={{ width: "50%", margin: "auto" }}>
           <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              required
+              type="text"
+              placeholder="Name"
+              {...register("Name", { required: true, maxLength: 80 })}
+            />
+            {errors.Name && (
+              <span className="field-error">This field is required</span>
+            )}
             <input
               required
               type="email"
@@ -50,9 +59,26 @@ const Login = () => {
                 lowercase, 1 special character, 2 numbers.
               </span>
             )}
+            <input
+              required
+              type="password"
+              placeholder="Confrim-Password"
+              {...register("ConfrimPassword", {
+                required: true,
+                pattern:
+                  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/i,
+              })}
+            />
+            {errors.ConfrimPassword && (
+              <span className="field-error">
+                Password should have at least 8 chracters, 2 uppercase, 3
+                lowercase, 1 special character, 2 numbers.
+              </span>
+            )}
+
             <input className="submit-btn" type="submit" value="Sign In" />
           </form>
-          <Link to="/signup">New to Hot Chili?</Link>
+          <Link to="/login">Already have an account?</Link>
         </Box>
         <Box sx={{ mt: 4, borderTop: "1px solid #ddd", pt: 2 }}>
           <Typography>Or sign in using</Typography>
@@ -71,4 +97,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

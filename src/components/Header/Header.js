@@ -14,6 +14,9 @@ const Header = () => {
   const handleLogin = () => {
     history.push("/login");
   };
+  const handleSignUP = () => {
+    history.push("/signup");
+  };
   return (
     <>
       <Box
@@ -66,6 +69,7 @@ const Header = () => {
                 <Button
                   sx={{ bgcolor: "#F74528", mx: 2, borderRadius: 4 }}
                   variant="contained"
+                  onClick={handleSignUP}
                 >
                   Sign Up
                 </Button>

@@ -1,0 +1,17 @@
+.field-error {
+  color: #f74528 !important;
+}
+.signup-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 10px 0 10px 0;
+  outline: none;
+  border: 1px solid #ddd;
+}
+.submit-btn {
+  background: #f74528;
+  color: #fff;
+  font-size: 20px;
+}
