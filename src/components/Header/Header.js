@@ -84,10 +84,11 @@ const Header = () => {
               )}
 
               <span>
-                {user?.photoURL && (
+                {user?.photoURL ? (
                   <img className="user-img" src={user.photoURL} alt="" />
+                ) : (
+                  <small>{user?.displayName}</small>
                 )}
-                {!user.photoURL && <small>{user.displayName}</small>}
               </span>
             </Grid>
           </Grid>
