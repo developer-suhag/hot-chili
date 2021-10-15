@@ -27,7 +27,6 @@ const FoodTabs = () => {
               textColor="secondary"
               indicatorColor="secondary"
               onChange={handleChange}
-              aria-label="lab API tabs example"
               centered
             >
               <Tab label="Breakfast" value="1" />

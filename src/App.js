@@ -10,6 +10,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound";
 import AuthProvider from "./context/AuthProvider";
 import Login from "./components/Login/Login/Login";
 import SignUp from "./components/Login/SignUp/SignUp";
+import FoodDetails from "./components/FoodDetails/FoodDetails";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <SignUp></SignUp>
+            </Route>
+            <Route path="/food/:foodId">
+              <FoodDetails></FoodDetails>
             </Route>
             <Route path="*">
               <PageNotFound></PageNotFound>

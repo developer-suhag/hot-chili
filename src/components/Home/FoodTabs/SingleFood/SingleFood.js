@@ -9,11 +9,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import "./SingleFood.css";
+import { useHistory } from "react-router-dom";
 
 const SingleFood = ({ food }) => {
-  const { foodName, description, img, price } = food;
+  const { id, foodName, description, img, price } = food;
+  const history = useHistory();
   const handleClick = () => {
-    console.log("object");
+    history.push(`/food/${id}`);
   };
   return (
     <div>
