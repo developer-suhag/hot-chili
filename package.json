@@ -8,6 +8,7 @@
     "@fontsource/oswald": "^4.5.1",
     "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.0.3",
+    "@mui/lab": "^5.0.0-alpha.51",
     "@mui/material": "^5.0.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
