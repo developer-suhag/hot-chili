@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
-import { deleteFromDb } from "../../utilities/fakedb";
+import { clearTheCart, deleteFromDb } from "../../utilities/fakedb";
 import SingleFoodReview from "./SingleFoodReview/SingleFoodReview";
 
 const OrderReview = () => {
@@ -38,6 +38,8 @@ const OrderReview = () => {
 
   const handlePlaceOrderClick = () => {
     history.push("./order-place");
+    setCart([]);
+    clearTheCart();
   };
 
   const subTotal = cart.reduce(
