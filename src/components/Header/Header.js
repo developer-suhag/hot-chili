@@ -4,7 +4,6 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import useCart from "../../hooks/useCart";
 import logo from "../../images/logo.png";
 import "./Header.css";
 

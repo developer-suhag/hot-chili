@@ -44,10 +44,10 @@ const AuthProvider = ({ children }) => {
         if (addedProduct) {
           const quantity = savedCart[key];
           addedProduct.quantity = quantity;
-          setCart(storedCart);
         }
       }
     }
+    setCart(storedCart);
   }, [foods]);
 
   const totalQuantity = cart.reduce(
