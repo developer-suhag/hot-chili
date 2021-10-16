@@ -6,7 +6,6 @@ import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
 import logo from "../../images/logo.png";
-import { getStoredCart } from "../../utilities/fakedb";
 import "./Header.css";
 
 const Header = () => {

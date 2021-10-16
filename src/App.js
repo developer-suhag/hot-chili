@@ -12,6 +12,7 @@ import Login from "./components/Login/Login/Login";
 import SignUp from "./components/Login/SignUp/SignUp";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import OrderReview from "./components/OrderReview/OrderReview";
+import OrderPlace from "./components/OrderPlace/OrderPlace";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/order-review">
               <OrderReview></OrderReview>
+            </Route>
+            <Route path="/order-place">
+              <OrderPlace></OrderPlace>
             </Route>
             <Route path="*">
               <PageNotFound></PageNotFound>

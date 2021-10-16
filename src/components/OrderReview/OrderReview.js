@@ -12,6 +12,7 @@ import {
 import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
 import { deleteFromDb } from "../../utilities/fakedb";
@@ -21,6 +22,7 @@ const OrderReview = () => {
   const combineContext = useAuth();
   const { foods, totalQuantity } = combineContext;
   const [cart, setCart] = useCart(foods);
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -28,22 +30,16 @@ const OrderReview = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 
-  const handleClick = (id) => {
+  const handleRemoveClick = (id) => {
     const newCart = cart.filter((food) => food.id !== id);
     deleteFromDb(id);
     setCart(newCart);
   };
 
-  // const { allContext } = combineContext;
-  // const { user, logOut } = allContext;
-  // const { totalQuantity } = combineContext;
-  // console.log(totalQuantity);
+  const handlePlaceOrderClick = () => {
+    history.push("./order-place");
+  };
 
-  // console.log(foods);
-
-  // const storedCart = useCart(foods);
-
-  // const cartFoods = getStoredCart();
   const subTotal = cart.reduce(
     (previous, current) => previous + current.price,
     0
@@ -113,7 +109,7 @@ const OrderReview = () => {
               <SingleFoodReview
                 key={food.id}
                 food={food}
-                handleClick={handleClick}
+                handleClick={handleRemoveClick}
               ></SingleFoodReview>
             ))}
           </Box>
@@ -140,7 +136,11 @@ const OrderReview = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <Button sx={{ mt: 3, bgcolor: "#487E91" }} variant="contained">
+            <Button
+              onClick={handlePlaceOrderClick}
+              sx={{ mt: 3, bgcolor: "#487E91" }}
+              variant="contained"
+            >
               Place Order
             </Button>
           </Box>
