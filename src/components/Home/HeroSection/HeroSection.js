@@ -30,7 +30,7 @@ const HeroSection = () => {
             placeholder="Search food items"
             inputProps={{ "aria-label": "Search food items" }}
           />
-          <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+          <IconButton sx={{ p: "10px" }} aria-label="search">
             <SearchIcon />
           </IconButton>
         </Paper>
