@@ -14,6 +14,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
+import { deleteFromDb } from "../../utilities/fakedb";
 import SingleFoodReview from "./SingleFoodReview/SingleFoodReview";
 
 const OrderReview = () => {
@@ -26,6 +27,12 @@ const OrderReview = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  const handleClick = (id) => {
+    const newCart = cart.filter((food) => food.id !== id);
+    deleteFromDb(id);
+    setCart(newCart);
+  };
 
   // const { allContext } = combineContext;
   // const { user, logOut } = allContext;
@@ -47,7 +54,7 @@ const OrderReview = () => {
   if (totalQuantity < 2) {
     deliveryFee = totalQuantity * 2.99;
   }
-  if (totalQuantity > 2 && totalQuantity < 8) {
+  if (totalQuantity > 2 && totalQuantity < 10) {
     deliveryFee = totalQuantity * 4.99;
   } else {
     deliveryFee = totalQuantity * 6.99;
@@ -103,7 +110,11 @@ const OrderReview = () => {
           <Typography>107 Rd No 8</Typography>
           <Box sx={{ width: "80%", margin: "auto", mt: 4, textAlign: "left" }}>
             {cart.map((food) => (
-              <SingleFoodReview key={food.id} food={food}></SingleFoodReview>
+              <SingleFoodReview
+                key={food.id}
+                food={food}
+                handleClick={handleClick}
+              ></SingleFoodReview>
             ))}
           </Box>
           <Box sx={{ width: "80%", margin: "auto", mt: 4 }}>
@@ -124,7 +135,7 @@ const OrderReview = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>Total</TableCell>
-                    <TableCell>{total}</TableCell>
+                    <TableCell>{total.toFixed(2)}</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

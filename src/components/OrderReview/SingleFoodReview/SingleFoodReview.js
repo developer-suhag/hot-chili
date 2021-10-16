@@ -3,9 +3,11 @@ import { Box } from "@mui/system";
 import React from "react";
 import "./SingleFoodReview.css";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { deleteFromDb } from "../../../utilities/fakedb";
 
-const SingleFoodReview = ({ food }) => {
-  const { img, foodName, price, quantity } = food;
+const SingleFoodReview = (props) => {
+  const { id, img, foodName, price, quantity } = props.food;
+  const { handleClick } = props;
 
   return (
     <Box sx={{ boxShadow: 4, borderRadius: 2 }} className="single-food-review">
@@ -40,7 +42,11 @@ const SingleFoodReview = ({ food }) => {
           </Typography>
         </Box>
         <Box>
-          <IconButton sx={{ color: "#F74528" }} aria-label="delete">
+          <IconButton
+            onClick={() => handleClick(id)}
+            sx={{ color: "#F74528" }}
+            aria-label="delete"
+          >
             <DeleteIcon />
           </IconButton>
         </Box>
