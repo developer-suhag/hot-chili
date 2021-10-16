@@ -6,6 +6,7 @@ import "./FoodDetails.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useEffect, useState } from "react";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
+import FoodSlider from "./FoodSlider/FoodSlider";
 
 const FoodDetails = () => {
   const { foodId } = useParams();

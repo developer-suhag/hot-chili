@@ -1,0 +1,9 @@
+.single-food-review {
+  background: #ffe6d9;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+.single-food-review img {
+  width: 100px;
+  border-radius: 10px;
+}

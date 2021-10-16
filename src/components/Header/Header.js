@@ -25,6 +25,10 @@ const Header = () => {
     history.push("/signup");
   };
 
+  const handleCartClick = () => {
+    history.push("/order-review");
+  };
+
   return (
     <>
       <Box
@@ -61,7 +65,11 @@ const Header = () => {
               xs={2}
               md={6}
             >
-              <Button sx={{ color: "#222" }} variant="text">
+              <Button
+                onClick={handleCartClick}
+                sx={{ color: "#222" }}
+                variant="text"
+              >
                 <ShoppingCartIcon /> <span>{totalQuantity}</span>
               </Button>
 
