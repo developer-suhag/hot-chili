@@ -9,7 +9,6 @@ const useCart = (foods) => {
     if (foods.length) {
       for (const key in savedCart) {
         const addedFood = foods.find((f) => f.id === key);
-        console.log(addedFood);
         if (addedFood) {
           const quantity = savedCart[key];
           addedFood.quantity = quantity;
