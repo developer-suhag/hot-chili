@@ -1,20 +1,19 @@
-import { Button, Container, Grid, Paper, Typography } from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import "./FoodDetails.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useEffect, useState } from "react";
-import { addToDb, getStoredCart } from "../../utilities/fakedb";
-import FoodSlider from "./FoodSlider/FoodSlider";
+import FoodSlider from "../FoodDetails/FoodSlider/FoodSlider";
 
 const FoodDetails = () => {
   const { foodId } = useParams();
   const { foods } = useAuth();
-  const [count, setCount] = useState(1);
+  console.log(foods);
+  // const [count, setCount] = useState(1);
 
   const combineContext = useAuth();
-  const { totalQuantity, handleCart } = combineContext;
+  const { handleCart } = combineContext;
   // console.log(handleCart);
 
   const newFood = [];
@@ -88,6 +87,9 @@ const FoodDetails = () => {
             >
               Add
             </Button>
+          </Box>
+          <Box sx={{ mt: 4 }}>
+            <FoodSlider></FoodSlider>
           </Box>
         </Grid>
         <Grid item xs={6}>
