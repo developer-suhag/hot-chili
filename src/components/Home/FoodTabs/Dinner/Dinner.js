@@ -19,7 +19,7 @@ const Dinner = () => {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {foods.map((food) => (
-          <Grid item xs={2} sm={4} md={4}>
+          <Grid item xs={2} sm={4} md={4} key={food.id}>
             <SingleFood key={food.id} food={food}></SingleFood>
           </Grid>
         ))}
