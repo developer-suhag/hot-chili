@@ -13,11 +13,14 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const allContext = useFirebase();
+  const combineContext = { allContext, foods };
   return (
-    <AuthContext.Provider value={({ allContext }, { foods })}>
+    <AuthContext.Provider value={combineContext}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export default AuthProvider;
+
+// value = {{allconext}, {foods}, {sanji}}

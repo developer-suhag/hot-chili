@@ -4,11 +4,17 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useCart from "../../hooks/useCart";
 import logo from "../../images/logo.png";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logOut } = useAuth();
+  // const { user, logOut } = useAuth();
+
+  const combineContext = useAuth();
+  const { allContext } = combineContext;
+  const { user, logOut } = allContext;
+
   const history = useHistory();
   const handleLogin = () => {
     history.push("/login");
@@ -16,6 +22,7 @@ const Header = () => {
   const handleSignUP = () => {
     history.push("/signup");
   };
+
   return (
     <>
       <Box

@@ -9,7 +9,10 @@ import logo from "../../../images/logo.png";
 import "./SignUp.css";
 
 const SignUp = () => {
-  const { signInUsingGoogle, handleEmailLogin } = useAuth();
+  // const { signInUsingGoogle, handleEmailLogin } = useAuth();
+  const combineContext = useAuth();
+  const { allContext } = combineContext;
+  const { signInUsingGoogle, handleEmailLogin } = allContext;
   const {
     register,
     handleSubmit,

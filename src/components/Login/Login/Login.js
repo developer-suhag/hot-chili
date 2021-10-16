@@ -9,7 +9,11 @@ import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
 const Login = () => {
-  const { signInUsingGoogle, userLogin } = useAuth();
+  // const { signInUsingGoogle, userLogin } = useAuth();
+  const combineContext = useAuth();
+  const { allContext } = combineContext;
+  const { signInUsingGoogle, userLogin } = allContext;
+
   const {
     register,
     handleSubmit,
