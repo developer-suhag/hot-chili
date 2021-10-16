@@ -13,6 +13,7 @@ import SignUp from "./components/Login/SignUp/SignUp";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import OrderReview from "./components/OrderReview/OrderReview";
 import OrderPlace from "./components/OrderPlace/OrderPlace";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -39,9 +40,9 @@ function App() {
             <Route path="/order-review">
               <OrderReview></OrderReview>
             </Route>
-            <Route path="/order-place">
+            <PrivateRoute exact path="/order-place">
               <OrderPlace></OrderPlace>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <PageNotFound></PageNotFound>
             </Route>

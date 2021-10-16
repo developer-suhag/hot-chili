@@ -10,13 +10,13 @@ import "./Header.css";
 
 const Header = () => {
   // const { user, logOut } = useAuth();
+  const history = useHistory();
 
   const combineContext = useAuth();
   const { allContext } = combineContext;
   const { user, logOut } = allContext;
   const { totalQuantity } = combineContext;
 
-  const history = useHistory();
   const handleLogin = () => {
     history.push("/login");
   };

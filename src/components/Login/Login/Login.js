@@ -7,12 +7,25 @@ import { useForm } from "react-hook-form";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
+import { useHistory, useLocation } from "react-router-dom";
 
 const Login = () => {
   // const { signInUsingGoogle, userLogin } = useAuth();
   const combineContext = useAuth();
   const { allContext } = combineContext;
-  const { signInUsingGoogle, userLogin } = allContext;
+  const { signInUsingGoogle, userLogin, setIsLoading } = allContext;
+
+  const history = useHistory();
+  const location = useLocation();
+  const redriect_uri = location.state?.from || "/home";
+
+  const handleGoogleLogin = () => {
+    signInUsingGoogle()
+      .then((result) => {
+        history.push(redriect_uri);
+      })
+      .finally(() => setIsLoading(false));
+  };
 
   const {
     register,
@@ -67,7 +80,7 @@ const Login = () => {
             startIcon={<GoogleIcon />}
             variant="contained"
             sx={{ bgcolor: "#F74528", mt: 2 }}
-            onClick={signInUsingGoogle}
+            onClick={handleGoogleLogin}
           >
             Sign In using Google
           </Button>

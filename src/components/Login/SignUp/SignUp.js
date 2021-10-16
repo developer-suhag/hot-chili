@@ -7,12 +7,26 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import logo from "../../../images/logo.png";
 import "./SignUp.css";
+import { useHistory, useLocation } from "react-router-dom";
 
 const SignUp = () => {
   // const { signInUsingGoogle, handleEmailLogin } = useAuth();
   const combineContext = useAuth();
   const { allContext } = combineContext;
-  const { signInUsingGoogle, handleEmailLogin } = allContext;
+  const { signInUsingGoogle, handleEmailLogin, setIsLoading } = allContext;
+
+  const history = useHistory();
+  const location = useLocation();
+  const redriect_uri = location.state?.from || "/home";
+
+  const handleGoogleLogin = () => {
+    signInUsingGoogle()
+      .then((result) => {
+        history.push(redriect_uri);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
   const {
     register,
     handleSubmit,
@@ -92,7 +106,7 @@ const SignUp = () => {
             startIcon={<GoogleIcon />}
             variant="contained"
             sx={{ bgcolor: "#F74528", mt: 2 }}
-            onClick={signInUsingGoogle}
+            onClick={handleGoogleLogin}
           >
             Sign In using Google
           </Button>
