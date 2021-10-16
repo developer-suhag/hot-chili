@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
 import logo from "../../images/logo.png";
+import { getStoredCart } from "../../utilities/fakedb";
 import "./Header.css";
 
 const Header = () => {
@@ -14,6 +15,7 @@ const Header = () => {
   const combineContext = useAuth();
   const { allContext } = combineContext;
   const { user, logOut } = allContext;
+  const { totalQuantity } = combineContext;
 
   const history = useHistory();
   const handleLogin = () => {
@@ -60,7 +62,7 @@ const Header = () => {
               md={6}
             >
               <Button sx={{ color: "#222" }} variant="text">
-                <ShoppingCartIcon />
+                <ShoppingCartIcon /> <span>{totalQuantity}</span>
               </Button>
 
               {!user?.email && (
