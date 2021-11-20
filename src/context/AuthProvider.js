@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import useFirebase from "../hooks/useFirebase";
 import { addToDb, getStoredCart } from "../utilities/fakedb";
 
@@ -8,7 +7,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch("./foods.json")
+    fetch("https://developer-suhag.github.io/hot-chili-json/foods.json")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);

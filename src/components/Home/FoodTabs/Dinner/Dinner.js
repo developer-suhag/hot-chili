@@ -6,7 +6,7 @@ import SingleFood from "../SingleFood/SingleFood";
 const Dinner = () => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch("./dinner.json")
+    fetch("https://developer-suhag.github.io/hot-chili-json/dinner.json")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);

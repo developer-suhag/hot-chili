@@ -32,7 +32,9 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
+    console.log(data);
     const { Name, Email, Password } = data;
     handleEmailLogin(Name, Email, Password);
   };

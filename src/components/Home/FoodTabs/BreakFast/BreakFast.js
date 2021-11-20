@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import SingleFood from "../SingleFood/SingleFood";
@@ -7,7 +7,7 @@ import "./BreakFast.css";
 const BreakFast = () => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch("./breakfast.json")
+    fetch("https://developer-suhag.github.io/hot-chili-json/breakfast.json")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);
